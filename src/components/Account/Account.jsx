@@ -20,7 +20,7 @@ export default function Account() {
         </div>
       </div>
 
-      <p className="text">
+      <p className="text bio">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
         Quisque volutpat mattis eros.
       </p>
@@ -48,7 +48,7 @@ export default function Account() {
 
         <div className="detail">
           <img src={Website} alt="Website icon" />
-          <p className="text">https://github.blog</p>
+          <p className="text link">https://github.blog</p>
         </div>
 
         <div className="detail">

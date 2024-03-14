@@ -74,3 +74,39 @@
   display: flex;
   gap: 15px;
 }
+
+.link {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    padding: 40px;
+    gap: 32px;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .user {
+    flex-direction: row;
+    gap: 138px;
+  }
+
+  .bio {
+    margin-left: 92px;
+    margin-top: -40px;
+  }
+
+  .container {
+    margin-left: 92px;
+  }
+
+  .details {
+    margin-left: 92px;
+  }
+}

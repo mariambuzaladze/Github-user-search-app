@@ -15,6 +15,7 @@ h1 {
   display: flex;
   gap: 16px;
   align-items: center;
+  cursor: pointer;
 }
 
 .theme-text {

@@ -20,6 +20,7 @@
   color: #4b6a9b;
   border: none;
   width: 100%;
+  cursor: pointer;
 }
 
 button {
@@ -31,4 +32,10 @@ button {
   font-size: 14px;
   font-weight: bold;
   color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #60abff;
 }
