@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+h1 {
+  font-size: 26px;
+  color: #222731;
+}
+
+.theme {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.theme-text {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  color: #4b6a9b;
+}
