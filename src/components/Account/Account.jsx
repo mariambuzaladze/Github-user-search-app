@@ -60,7 +60,9 @@ export default function Account({
 
         <div className="detail">
           <img src={Website} alt="Website icon" />
-          <p className="text link">{link}</p>
+          <a href={link} className="text link">
+            {link}
+          </a>
         </div>
 
         <div className="detail">
