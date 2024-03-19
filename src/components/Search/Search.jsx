@@ -1,22 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./search.css";
 import SearchIcon from "/images/icon-search.svg";
 
-export default function Search({
-  userInput,
-  setUserInput,
-  setAvatar,
-  setLogin,
-  setDate,
-  setBio,
-  setRepos,
-  setFollowers,
-  setFollowing,
-  setLocation,
-  setLink,
-  setTwitter,
-  setCompany,
-}) {
+export default function Search({ userInput, setUserInput, setData }) {
   const [display, setDisplay] = useState("none");
 
   async function getData(input) {
@@ -35,18 +21,7 @@ export default function Search({
   }
 
   const handleClick = async () => {
-    let data = await getData(userInput);
-    setAvatar(data.avatar_url);
-    setLogin(data.login);
-    setDate(data.created_at.split("T")[0]);
-    setBio(data.bio !== null ? data.bio : "No Bio");
-    setRepos(data.public_repos);
-    setFollowers(data.followers);
-    setFollowing(data.following);
-    setLocation(data.location !== null ? data.location : "Not Available");
-    setLink(data.html_url);
-    setTwitter(data.twitter_username ? data.twitter_username : "Not Available");
-    setCompany(data.company !== null ? data.company : "Not Available");
+    setData(getData(userInput));
   };
 
   return (

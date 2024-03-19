@@ -4,75 +4,70 @@ import Website from "/images/icon-website.svg";
 import Twitter from "/images/icon-twitter.svg";
 import Company from "/images/icon-company.svg";
 
-export default function Account({
-  avatar,
-  login,
-  date,
-  bio,
-  repos,
-  followers,
-  following,
-  location,
-  link,
-  twitter,
-  company,
-}) {
+export default function Account({ data }) {
   return (
     <div className="page">
       <div className="title">
-        <img className="avatar" src={avatar} alt="avatar" />
+        <img className="avatar" src={data.avatar_url} alt="avatar" />
         <div className="user">
           <div className="names">
-            <p className="name text">{login}</p>
+            <p className="name text">{data.login}</p>
             <p className="userName">
-              @<span>{login}</span>
+              @<span>{data.login}</span>
             </p>
           </div>
 
           <p className="text">
-            Joined <span>{date}</span>
+            Joined{" "}
+            <span>{data.created_at ? data.created_at.split("T")[0] : ""}</span>
           </p>
         </div>
       </div>
 
-      <p className="text bio">{bio}</p>
+      <p className="text bio">{data.bio !== null ? data.bio : "No Bio"}</p>
 
       <div className="container">
         <div className="content">
           <p className="text">Repos</p>
-          <p className="text number">{repos}</p>
+          <p className="text number">{data.public_repos}</p>
         </div>
         <div className="content">
           <p className="text">Followers</p>
-          <p className="text number">{followers}</p>
+          <p className="text number">{data.followers}</p>
         </div>
         <div className="content">
           <p className="text">Following</p>
-          <p className="text number">{following}</p>
+          <p className="text number">{data.following}</p>
         </div>
       </div>
 
       <div className="details">
         <div className="detail">
           <img src={Location} alt="Location icon" />
-          <p className="text">{location}</p>
+          <p className="text">
+            {data.location !== null ? data.location : "Not Available"}
+          </p>
         </div>
 
         <div className="detail">
           <img src={Website} alt="Website icon" />
-          <a href={link} className="text link">
-            {link}
+          <a href={data.html_url} className="text link">
+            {data.html_url}
           </a>
         </div>
 
         <div className="detail">
           <img src={Twitter} alt="Twitter icon" />
-          <p className="text">{twitter}</p>
+          <p className="text">
+            {data.twitter_username ? data.twitter_username : "Not Available"}
+          </p>
         </div>
 
         <div className="detail">
           <img src={Company} alt="Company icon" />
-          <p className="text">{company}</p>
+          <p className="text">
+            {data.company !== null ? data.company : "Not Available"}
+          </p>
         </div>
       </div>
     </div>
