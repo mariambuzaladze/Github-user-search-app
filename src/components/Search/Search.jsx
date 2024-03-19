@@ -20,8 +20,17 @@ export default function Search({ userInput, setUserInput, setData }) {
     }
   }
 
+  useEffect(() => {
+    async function myAccount() {
+      if (userInput.length === 0) {
+        setData(await getData("mariambuzaladze"));
+      }
+    }
+    myAccount();
+  }, []);
+
   const handleClick = async () => {
-    setData(getData(userInput));
+    setData(await getData(userInput));
   };
 
   return (
