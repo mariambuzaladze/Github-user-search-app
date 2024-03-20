@@ -2,7 +2,13 @@ import { useState } from "react";
 import "./search.css";
 import SearchIcon from "/images/icon-search.svg";
 
-export default function Search({ userInput, setUserInput, data, setData }) {
+export default function Search({
+  userInput,
+  setUserInput,
+  data,
+  setData,
+  theme,
+}) {
   const [display, setDisplay] = useState("none");
 
   async function getData(input) {
@@ -26,7 +32,10 @@ export default function Search({ userInput, setUserInput, data, setData }) {
   };
 
   return (
-    <div className="search-bar">
+    <div
+      className="search-bar"
+      style={theme === "dark" ? { backgroundColor: "#1e2a47" } : {}}
+    >
       <img className="search-icon" src={SearchIcon} alt="search icon" />
       <input
         type="text"
@@ -35,6 +44,7 @@ export default function Search({ userInput, setUserInput, data, setData }) {
         placeholder="Search GitHub username…"
         value={userInput}
         onChange={(event) => setUserInput(event.target.value.trim())}
+        style={theme === "dark" ? { backgroundColor: "#1e2a47" } : {}}
       />
       <p className="error" style={{ display: display }}>
         No results

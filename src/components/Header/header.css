@@ -11,11 +11,22 @@ h1 {
   color: #222731;
 }
 
-.theme {
+.light {
   display: flex;
   gap: 16px;
   align-items: center;
   cursor: pointer;
+}
+
+.dark {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dark .theme-text {
+  color: #fff;
 }
 
 .theme-text {

@@ -9,6 +9,10 @@
   background-color: #fefefe;
 }
 
+._dark {
+  background-color: #1e2a47;
+}
+
 .avatar {
   width: 70px;
   height: 70px;
@@ -31,6 +35,9 @@
 .text {
   font-size: 13px;
   color: #697c9a;
+}
+._dark .text {
+  color: #fff;
 }
 
 .name {

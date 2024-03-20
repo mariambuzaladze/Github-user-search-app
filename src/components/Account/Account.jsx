@@ -4,9 +4,9 @@ import Website from "/images/icon-website.svg";
 import Twitter from "/images/icon-twitter.svg";
 import Company from "/images/icon-company.svg";
 
-export default function Account({ data }) {
+export default function Account({ data, theme }) {
   return (
-    <div className="page">
+    <div className={theme === "dark" ? "page _dark" : "page"}>
       <div className="title">
         <img className="avatar" src={data.avatar_url} alt="avatar" />
         <div className="user">
@@ -24,9 +24,14 @@ export default function Account({ data }) {
         </div>
       </div>
 
-      <p className="text bio">{data.bio !== null ? data.bio : "No Bio"}</p>
+      <p className="text bio">
+        {data.bio !== null ? data.bio : "This profile has no bio"}
+      </p>
 
-      <div className="container">
+      <div
+        className="container"
+        style={theme === "dark" ? { backgroundColor: "#141d2f" } : {}}
+      >
         <div className="content">
           <p className="text">Repos</p>
           <p className="text number">{data.public_repos}</p>

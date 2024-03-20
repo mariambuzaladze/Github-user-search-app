@@ -7,6 +7,8 @@ import Account from "./components/Account/Account";
 function App() {
   const [userInput, setUserInput] = useState("");
 
+  const [theme, setTheme] = useState("light");
+
   const [data, setData] = useState({
     login: "mariambuzaladze",
     id: 152083568,
@@ -23,16 +25,20 @@ function App() {
   });
 
   return (
-    <>
-      <Header />
+    <div
+      className="main"
+      style={theme === "dark" ? { backgroundColor: "#141d2f" } : {}}
+    >
+      <Header theme={theme} setTheme={setTheme} />
       <Search
+        theme={theme}
         userInput={userInput}
         setUserInput={setUserInput}
         data={data}
         setData={setData}
       />
-      <Account data={data} />
-    </>
+      <Account data={data} theme={theme} />
+    </div>
   );
 }
 
