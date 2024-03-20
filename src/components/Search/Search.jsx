@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./search.css";
 import SearchIcon from "/images/icon-search.svg";
 
-export default function Search({ userInput, setUserInput, setData }) {
+export default function Search({ userInput, setUserInput, data, setData }) {
   const [display, setDisplay] = useState("none");
 
   async function getData(input) {
@@ -17,17 +17,9 @@ export default function Search({ userInput, setUserInput, setData }) {
       return await response.json();
     } catch (e) {
       console.log(e);
+      return data;
     }
   }
-
-  useEffect(() => {
-    async function myAccount() {
-      if (userInput.length === 0) {
-        setData(await getData("mariambuzaladze"));
-      }
-    }
-    myAccount();
-  }, []);
 
   const handleClick = async () => {
     setData(await getData(userInput));
